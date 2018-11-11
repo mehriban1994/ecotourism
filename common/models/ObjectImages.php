@@ -33,7 +33,7 @@ class ObjectImages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['object_id', 'image', 'type_id'], 'required'],
+            [['object_id', 'type_id'], 'required'],
             [['object_id', 'type_id'], 'integer'],
             [['image'], 'string', 'max' => 200],
             [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],

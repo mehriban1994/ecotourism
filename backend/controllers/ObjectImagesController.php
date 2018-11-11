@@ -72,7 +72,7 @@ class ObjectImagesController extends Controller
 
             if ($model->validate()) {
                 if ($model->imageFile) {
-                    $filePath = Yii::getAlias('@frontend').'\web\images\uz\objects\\' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+                    $filePath = Yii::getAlias('@frontendWeb').'\images\uz\objects\\' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
                     if ($model->imageFile->saveAs($filePath)) {
                         $model->image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
                     }
@@ -99,9 +99,23 @@ class ObjectImagesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model->load(Yii::$app->request->post());
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->object_image_id]);
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            if ($model->validate()) {
+                if ($model->imageFile) {
+                    $filePath = Yii::getAlias('@frontendWeb').'\images\uz\objects\\' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+                    if ($model->imageFile->saveAs($filePath)) {
+                        $model->image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
+                    }
+                }
+
+                if ($model->save(false)) {
+                    return $this->redirect(['view', 'id' => $model->object_image_id]);
+                }
+            }
         }
 
         return $this->render('update', [

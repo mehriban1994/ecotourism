@@ -56,7 +56,7 @@ $this->title = "Welcome to Uzbekistan!";
                                 <nav id="mainnav" class="mainnav">
                                     <ul class="menu">
                                         <li class="active"><?=Html::a('Home', ['site/index'])?></li>
-                                        <li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;Map</a></li>
+                                        <li><?=Html::a('<i class="fa fa-map-marker"></i>&nbsp;Map', ['site/map'])?></li>
                                         <li><?=Html::a('Hotels', ['site/category', 'slug' => 'hotels'])?></li>
                                         <li><?=Html::a('Restaurants and cafes', ['site/category', 'slug' => 'restaurants'])?></li>
                                         <li><a href="#">Places</a>

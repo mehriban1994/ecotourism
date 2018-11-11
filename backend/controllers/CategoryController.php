@@ -72,7 +72,7 @@ class CategoryController extends Controller
 
             if ($model->validate()) {
                 if ($model->imageFile) {
-                    $filePath = Yii::getAlias('@frontend').'\web\images\uz\categories\\' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+                    $filePath = Yii::getAlias('@frontendWeb').'\images\uz\categories\\' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
                     if ($model->imageFile->saveAs($filePath)) {
                         $model->header_image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
                     }
@@ -106,7 +106,7 @@ class CategoryController extends Controller
 
             if ($model->validate()) {
                 if ($model->imageFile) {
-                    $filePath = Yii::getAlias('@frontend').'\web\images\uz\categories\\' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+                    $filePath = Yii::getAlias('@frontendWeb').'\images\uz\categories\\' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
                     if ($model->imageFile->saveAs($filePath)) {
                         $model->header_image = $model->imageFile->baseName . '.' . $model->imageFile->extension;
                     }

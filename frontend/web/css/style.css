@@ -5526,7 +5526,7 @@ footer a {
     background-color: #fff;
     padding: 10px;
     margin: 5px;
-    font-size: 24px;
+    font-size: 20px;
 }
 .sidebar1 ul li a i{
     width: 40px;
@@ -5534,5 +5534,20 @@ footer a {
     display: inline-block;
     text-align: center;
 }
-
+.map_info {
+    width: 250px;
+}
+.map_info .image-box {
+     width: 100%;
+ }
+.gm-style img{
+    max-width: 100%;
+    width: 100%;
+}
+.map_info .info {
+     margin-top: 10px;
+ }
+#gmap0-map-canvas {
+    width: 100%
+}
 

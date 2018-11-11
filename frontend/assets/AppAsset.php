@@ -40,8 +40,8 @@ class AppAsset extends AssetBundle
         'revolution/js/extensions/revolution.extension.migration.min.js',
         'revolution/js/extensions/revolution.extension.navigation.min.js',
         'revolution/js/extensions/revolution.extension.parallax.min.js',
-        'revolution/js/extensions/revolution.extension.slideanims.min.js',
-        'revolution/js/extensions/revolution.extension.video.min.js'
+        'revolution/js/extensions/revolution.extension.slideanims.min.js'
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

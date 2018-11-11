@@ -13,7 +13,8 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-frontend',
+            'class' => 'common\components\Request',
+            'web'=> '/frontend/web'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -36,14 +37,17 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/'              => 'site/index',
+                '<slug:[a-z-]+>' => 'site/category',
+                '<id:\d+>'       => 'site/object',
             ],
         ],
-        */
+
 
         /*'urlManager'         => [
             'showScriptName'            => false,

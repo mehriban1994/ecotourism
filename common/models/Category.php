@@ -81,14 +81,15 @@ class Category extends \yii\db\ActiveRecord
         return $this->hasMany(Object::className(), ['category_id' => 'category_id']);
     }
 
-    public static function findBySlug($slug)
-    {
-        return Category::findOne(['slug' => $slug]);
-    }
-
     public function getImageFile()
     {
         return isset($this->header_image) ? Yii::getAlias('@frontend').'\web\images\uz\categories\\' . $this->header_image : null;
+    }
+
+    public static function findBySlug($slug)
+    {
+        $cat = Category::findOne(['slug' => $slug]);
+        return $cat;
     }
 
 }

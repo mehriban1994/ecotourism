@@ -1,16 +1,24 @@
 <?php
 use yii\helpers\Html;
-use frontend\widgets\ObjectWidget;
-use yii\grid\GridView;
-use common\models\Category;
-use yii\helpers\Url;
-use yii\widgets\Pjax;
+use dosamigos\google\maps\LatLng;
+use dosamigos\google\maps\services\DirectionsWayPoint;
+use dosamigos\google\maps\services\TravelMode;
+use dosamigos\google\maps\overlays\PolylineOptions;
+use dosamigos\google\maps\services\DirectionsRenderer;
+use dosamigos\google\maps\services\DirectionsService;
+use dosamigos\google\maps\overlays\InfoWindow;
+use dosamigos\google\maps\overlays\Marker;
+use dosamigos\google\maps\Map;
+use dosamigos\google\maps\services\DirectionsRequest;
+use dosamigos\google\maps\overlays\Polygon;
+use dosamigos\google\maps\layers\BicyclingLayer;
+
 
 /* @var $this yii\web\View */
 
 $this->title = $object->object_name;
 $this->registerJs("
-    $('.parallax1').css('background-image', 'url(images/uz/categories/". $object->getHeaderImage() . ")');
+    $('.parallax1').css('background-image', 'url(images/uz/objects/". $object->getHeaderImage()->image . ")');
 
     $('.smoothScroll').on('click', function (event) {
         if (this.hash !== '') {
@@ -27,9 +35,13 @@ $this->registerJs("
     $('#sidebar1').theiaStickySidebar({
         additionalMarginTop: 150
     });
-");
-?>
 
+");
+
+$lat_lng = explode(',', $object->location);
+$lat = $lat_lng[0];
+$lng = $lat_lng[1];
+?>
 <!-- Page title -->
 <div class="page-title">
     <div class="overlay"></div>
@@ -58,23 +70,13 @@ $this->registerJs("
 
 <div class="box-map" id="address">
     <div class="info-map">
-        <div class="left">
+        <div class="left" style="font-weight: bold;">
+            <p>Address</p>
             <p>Location</p>
-            <p>Visa requirement</p>
         </div>
         <div class="right">
-            <p>:Europe, France</p>
-            <p>:Yes</p>
-        </div>
-    </div>
-    <div class="info-map">
-        <div class="left">
-            <p>Location</p>
-            <p>Visa requirement</p>
-        </div>
-        <div class="right">
-            <p>:Europe, France</p>
-            <p>:Yes</p>
+            <p><?=$object->address?></p>
+            <p><?=$object->location?></p>
         </div>
     </div>
 </div>
@@ -88,47 +90,75 @@ $this->registerJs("
     <h4>Gallery</h4>
 </div>
 
-<div class="wrap-imagebox">
+<div class="row">
     <?php
     foreach($object->getSimpleImages() as $image) :
     ?>
-    <div class="wrap-item-imagebox">
-        <div class="flat-imagebox style2 v3">
-            <div class="item">
-                <div class="imagebox">
-                    <div class="box-wrap">
-                        <div class="box-image">
-                            <a href="#"><img src=images/uz/objects/"<?=$image?>" alt="img"></a>
-                            <div class="overlay"></div> <!-- /.overlay -->
-                        </div>
-                    </div> <!-- /.box-wrap -->
-                </div> <!-- /.imagebox -->
-            </div> <!-- /.item -->
+        <div class="col-md-4">
+            <div class="flat-imagebox">
+                <div class="item">
+                    <div class="imagebox">
+                        <div class="box-wrap">
+                            <div class="box-image">
+                                <a href="#"><?=Html::img('images/uz/objects/' . $image->image)?></a>
+                                <div class="overlay"></div> <!-- /.overlay -->
+                                <div class="imagebox-content">
+                                    <ul class="imagebox-link">
+                                        <li class="icon-l FromRight"><a class="popup-gallery" href="images/uz/objects/<?=$image->image?>"><span><i class="fa fa-search" aria-hidden="true"></i></span></a></li>
+                                    </ul>
+                                </div> <!-- /.imagebox-content -->
+                            </div>
+                        </div> <!-- /.box-wrap -->
+                    </div> <!-- /.imagebox -->
+                </div> <!-- /.item -->
 
-            <div class="dividers dividers-imagebox s2 v3"></div>
+            </div> <!-- /.flat-imagebox -->
+        </div> <!-- /.col-md-4 -->
 
-        </div> <!-- /.flat-imagebox -->
-    </div> <!-- /.wrap-item-imagebox -->
     <?php
     endforeach;
     ?>
 
 </div>
-    <div class="wrap-title s3" id="map">
+
+    <div class="wrap-title s3">
         <h4>Map</h4>
     </div>
-    <div>
-        <div class="gm-map">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="map"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </div>
+
+
+    <?php
+    $coord = new LatLng(['lat' => $lat, 'lng' => $lng]);
+    $map = new Map([
+        'center' => $coord,
+        'zoom' => 14,
+    ]);
+
+    // Lets add a marker now
+    $marker = new Marker([
+        'position' => $coord,
+        'title' => $object->object_name,
+    ]);
+
+    // Provide a shared InfoWindow to the marker
+    $marker->attachInfoWindow(
+        new InfoWindow([
+            'content' => '<div class="map_info">
+                            <div class="image-box">'.Html::img('images/uz/objects/'.$object->getThumbImage()->image, ['class' => 'img-responsive img-thumbnail']).'</div>
+                            <div class="info">'.$object->short_info.'</div>
+                          </div>'
+        ])
+    );
+
+    // Add marker to the map
+    $map->addOverlay($marker);
+
+    $map->width = '100%';
+    // Display the map -finally :)
+    echo $map->display();
+    ?>
+
+
 </div><!-- /.post-wrap -->
 
 </div><!-- /.col-md-9 -->

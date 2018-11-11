@@ -35,7 +35,7 @@ class Object extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['object_name', 'category_id'], 'required'],
+            [['object_name', 'category_id', 'slug'], 'required'],
             [['category_id'], 'integer'],
             [['short_info', 'full_info'], 'string'],
             [['object_name'], 'string', 'max' => 400],
@@ -92,5 +92,11 @@ class Object extends \yii\db\ActiveRecord
     public function getSimpleImages()
     {
         return $this->getObjectImages()->where(['type_id' => 2])->all();
+    }
+
+    public static function findBySlug($slug)
+    {
+        $cat = Object::findOne(['slug' => $slug]);
+        return $cat;
     }
 }

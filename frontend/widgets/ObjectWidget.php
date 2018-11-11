@@ -26,7 +26,7 @@ class ObjectWidget extends ListView
                 <div class='col-md-4'>
                     <div class='flat-imagebox style2 v2'>
                         <div class='item'>
-                                    <a href='". Url::to(['site/object', 'object_id' => $model->object_id]) . "'>
+                                    <a href='". Url::to(['site/object', 'id' => $model->object_id]) . "'>
                             <div class='imagebox'>
                                 <div class='box-wrap'>
                                         <div class='box-image'>"

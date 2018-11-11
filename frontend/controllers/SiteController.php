@@ -96,13 +96,23 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionObject($object_id)
+    public function actionObject($id)
     {
         $this->layout = 'category';
-        $object = Object::findOne(['object_id' => $object_id]);
+        $object = Object::findOne(['object_id' => $id]);
 
         return $this->render('object', [
             'object' => $object
+        ]);
+    }
+
+    public function actionMap()
+    {
+        $this->layout = 'category';
+        $objects = Object::find()->all();
+
+        return $this->render('map', [
+            'objects' => $objects
         ]);
     }
     /**
