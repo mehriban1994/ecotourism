@@ -37,7 +37,7 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-
+/*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -46,7 +46,7 @@ return [
                 '<slug:[a-z-]+>' => 'site/category',
                 '<id:\d+>'       => 'site/object',
             ],
-        ],
+        ],*/
 
 
         /*'urlManager'         => [

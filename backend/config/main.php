@@ -20,11 +20,11 @@ return [
                 ],
             ],
         ],
-        'request' => [
+        /*'request' => [
             'class' => 'common\components\Request',
             'web'=> '/backend/web',
             'adminUrl' => '/admin'
-        ],
+        ],*/
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -47,10 +47,10 @@ return [
             'errorAction' => 'site/error',
         ],
 
-        'urlManager' => [
+        /*'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-        ],
+        ],*/
 
     ],
     'params' => $params,

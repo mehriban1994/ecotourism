@@ -44,8 +44,8 @@ $this->title = "Welcome to Uzbekistan!";
                 <div class="row">
                     <div class="header-wrap clearfix">
                         <div class="col-lg-3 col-md-2">
-                            <div id="logo" class="logo">
-                                <a href="<?=Yii::$app->homeUrl?>"><img src="images/logo.png" alt="image"></a>
+                            <div id="logo" class="logo" style="margin-top: 40px;">
+                                <a href="<?=Yii::$app->homeUrl?>"><img src="images/uz/logo/logo_eco.png" alt="image"></a>
                             </div><!-- /.logo -->
                             <div class="btn-menu">
                                 <span></span>
@@ -57,14 +57,10 @@ $this->title = "Welcome to Uzbekistan!";
                                     <ul class="menu">
                                         <li class="active"><?=Html::a('Home', ['site/index'])?></li>
                                         <li><?=Html::a('<i class="fa fa-map-marker"></i>&nbsp;Map', ['site/map'])?></li>
-                                        <li><?=Html::a('Hotels', ['site/category', 'slug' => 'hotels'])?></li>
-                                        <li><?=Html::a('Restaurants and cafes', ['site/category', 'slug' => 'restaurants'])?></li>
-                                        <li><a href="#">Places</a>
-                                            <ul class="submenu right-sub-menu">
-                                                <li><?=Html::a('Historical places', ['site/category', 'slug' => 'historical-places'])?></li>
-                                                <li><?=Html::a('Sights', ['site/category', 'slug' => 'sights'])?></li>
-                                            </ul>
-                                        </li>
+                                        <li><?=Html::a('Deserts', ['site/category', 'slug' => 'deserts'])?></li>
+                                        <li><?=Html::a('Water basins', ['site/category', 'slug' => 'waters'])?></li>
+                                        <li><?=Html::a('Mountains', ['site/category', 'slug' => 'mountains'])?></li>
+                                        <li><?=Html::a('Forests', ['site/category', 'slug' => 'forests'])?></li>
                                         <li class="show-search"><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                                     </ul><!-- /.menu -->
                                 </nav><!-- /.mainnav -->
@@ -102,7 +98,7 @@ $this->title = "Welcome to Uzbekistan!";
                                     <h4 class="widget-title">Address</h4>
                                     <div class="textwidget">
                                         <ul>
-                                            <li>Uzbekistan, Tashkent</li>
+                                            <li>Uzbekistan</li>
                                         </ul>
                                     </div><!-- /.textwidget -->
                                 </div><!-- /.widget -->
@@ -113,8 +109,8 @@ $this->title = "Welcome to Uzbekistan!";
                                     <h4 class="widget-title">Email</h4>
                                     <div class="menu-footer-container">
                                         <ul>
-                                            <li><a href="#">info@sd-uzbekistan.uz</a></li>
-                                            <li><a href="#">support@sd-uzbekistan.uz</a></li>
+                                            <li><a href="#">info@ecotourism.uz</a></li>
+                                            <li><a href="#">support@ecotourism.uz</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -125,8 +121,8 @@ $this->title = "Welcome to Uzbekistan!";
                                     <h4 class="widget-title">Phone</h4>
                                     <div class="menu-footer-container">
                                         <ul>
-                                            <li><a href="#">+99894 222 6805</a></li>
-                                            <li><a href="#">+99899 861 6805</a></li>
+                                            <li><a href="#">+99894 123 45 67</a></li>
+                                            <li><a href="#">+99899 987 65 43</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -162,7 +158,7 @@ $this->title = "Welcome to Uzbekistan!";
                                     </ul>
                                 </div>
 
-                                <p class="copyright-text">&copy; <?= date('Y') ?> <a href="#">ESB & NDA</a>
+                                <p class="copyright-text">&copy; <?= date('Y') ?> <a href="#">Mehriban</a>
                                 </p>
                             </div>
                         </div><!-- /.col-md-6 -->

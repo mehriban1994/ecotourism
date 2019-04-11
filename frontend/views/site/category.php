@@ -39,7 +39,7 @@ $this->registerJs("
     <?php Pjax::begin(['id' => 'objects']) ?>
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'layout'       => ObjectWidget::widget(['dataProvider' => $dataProvider])
+        'layout'       => ObjectWidget::widget(['dataProvider' => $dataProvider]),
     ]); ?>
     <?php Pjax::end() ?>
 

@@ -26,10 +26,10 @@ $this->title = 'Home';
                     <div class="flat-slides">
                         <ul class="slides">
                             <li>
-                                <img src="images/uz/31.jpg" alt="">
+                                <img src="images/uz/111.jpg" alt="">
                             </li>
                             <li>
-                                <img src="images/uz/32.jpg" alt="">
+                                <img src="images/uz/26.jpg" alt="">
                             </li>
                         </ul>
                     </div> <!-- /.flat-slides -->

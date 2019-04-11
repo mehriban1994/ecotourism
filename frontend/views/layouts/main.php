@@ -43,8 +43,8 @@ $this->title = "Welcome to Uzbekistan!";
                 <div class="row">
                     <div class="header-wrap clearfix">
                         <div class="col-lg-3 col-md-2">
-                            <div id="logo" class="logo">
-                                <a href="<?=Yii::$app->homeUrl?>"><img src="images/logo.png" alt="image"></a>
+                            <div id="logo" class="logo" style="margin-top: 40px;">
+                                <a href="<?=Yii::$app->homeUrl?>"><img src="images/uz/logo/logo_eco.png" alt="image"></a>
                             </div><!-- /.logo -->
                             <div class="btn-menu">
                                 <span></span>
@@ -56,34 +56,11 @@ $this->title = "Welcome to Uzbekistan!";
                                     <ul class="menu">
                                         <li class="active"><?=Html::a('Home', ['site/index'])?></li>
                                         <li><?=Html::a('<i class="fa fa-map-marker"></i>&nbsp;Map', ['site/map'])?></li>
-                                        <li><?=Html::a('Hotels', ['site/category', 'slug' => 'hotels'])?></li>
-                                        <li><?=Html::a('Restaurants and cafes', ['site/category', 'slug' => 'restaurants'])?></li>
-                                        <li><a href="#">Places</a>
-                                            <ul class="submenu right-sub-menu">
-                                                <li><?=Html::a('Historical places', ['site/category', 'slug' => 'historical-places'])?></li>
-                                                <li><?=Html::a('Sights', ['site/category', 'slug' => 'sights'])?></li>
-                                            </ul>
-                                        </li>
-                                        <!--<li><a href="gallery-masonry.html">Adventures</a></li>
-                                        <li><a href="destination.html">Destination</a>
-                                            <ul class="submenu right-sub-menu">
-                                                <li><a href="destination-single-details.html">Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="tour_guide.html">Tour Guide</a></li>
-                                        <li><a href="blog.html">Blog</a>
-                                            <ul class="submenu right-sub-menu">
-                                                <li><a href="blog-single.html">Blog Single</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about-us.html">Pages</a>
-                                            <ul class="submenu right-sub-menu">
-                                                <li><a href="login.html">Login</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                            </ul>
-                                        </li>-->
-                                        <li><a href="contact-us.html">Contact Us</a></li>
+                                        <li><?=Html::a('Deserts', ['site/category', 'slug' => 'deserts'])?></li>
+                                        <li><?=Html::a('Water basins', ['site/category', 'slug' => 'waters'])?></li>
+                                        <li><?=Html::a('Mountains', ['site/category', 'slug' => 'mountains'])?></li>
+                                        <li><?=Html::a('Forests', ['site/category', 'slug' => 'forests'])?></li>
+
                                         <li class="show-search"><a href="#"><i class="fa fa-search"></i></a></li>
                                     </ul><!-- /.menu -->
                                 </nav><!-- /.mainnav -->
@@ -290,7 +267,7 @@ $this->title = "Welcome to Uzbekistan!";
         <li data-index="rs-3047" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="2000"    data-rotate="0"  data-saveperformance="off"  data-title="Ken Burns" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 
             <!-- MAIN IMAGE -->
-            <img src="images/uz/slide3.jpg"  alt=""  data-bgposition="center center" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            <img src="images/uz/slide5.jpg"  alt=""  data-bgposition="center center" data-kenburns="off" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYERS -->
 
             <!-- LAYER NR. 11 -->
@@ -408,7 +385,7 @@ $this->title = "Welcome to Uzbekistan!";
                                     <h4 class="widget-title">Address</h4>
                                     <div class="textwidget">
                                         <ul>
-                                            <li>Uzbekistan, Tashkent</li>
+                                            <li>Uzbekistan</li>
                                         </ul>
                                     </div><!-- /.textwidget -->
                                 </div><!-- /.widget -->
@@ -419,8 +396,8 @@ $this->title = "Welcome to Uzbekistan!";
                                     <h4 class="widget-title">Email</h4>
                                     <div class="menu-footer-container">
                                         <ul>
-                                            <li><a href="#">info@sd-uzbekistan.uz</a></li>
-                                            <li><a href="#">support@sd-uzbekistan.uz</a></li>
+                                            <li><a href="#">info@ecotourism.uz</a></li>
+                                            <li><a href="#">support@ecotourism.uz</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -431,8 +408,8 @@ $this->title = "Welcome to Uzbekistan!";
                                     <h4 class="widget-title">Phone</h4>
                                     <div class="menu-footer-container">
                                         <ul>
-                                            <li><a href="#">+99894 222 6805</a></li>
-                                            <li><a href="#">+99899 861 6805</a></li>
+                                            <li><a href="#">+99894 123 45 67</a></li>
+                                            <li><a href="#">+99899 987 65 43</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -468,7 +445,7 @@ $this->title = "Welcome to Uzbekistan!";
                                     </ul>
                                 </div>
 
-                                <p class="copyright-text">&copy; <?= date('Y') ?> <a href="#">ESB & NDA</a>
+                                <p class="copyright-text">&copy; <?= date('Y') ?> <a href="#">Mehriban</a>
                                 </p>
                             </div>
                         </div><!-- /.col-md-6 -->
